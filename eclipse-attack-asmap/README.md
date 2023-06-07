@@ -20,17 +20,21 @@ increased cost for attackers.
 
 ## Probabilities for multivariate noncentral Wallenius hypergeometric distribution
 
-I was too thick to get the scipy's Wallenius implementation running (the
+I was too thick to get scipy's Wallenius implementation running (the
 [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nchypergeom_wallenius.html)
-was mostly confusing, sometimes wrong; the meaning of function arguments is not fully
-clear; most suspicious, however: the function takes too many arguments than actually
+was mostly confusing, sometimes wrong; meaning of function arguments is not obvious ;
+most suspicious, however: the function takes one more arguments than is actually
 required). Agner Fog's BiasedUrn package, on the other hand, has excellent
 [documentation](https://cran.r-project.org/web/packages/BiasedUrn/BiasedUrn.pdf) (and
 accompanying
 [theory](https://cran.r-project.org/web/packages/BiasedUrn/vignettes/UrnTheory.pdf)).
 Although there's a [python package](https://pypi.org/project/biasedurn/), I was too
 thick to get this one working as well, so I had to use Agner's own implementation
-written for R. Fortunately there's a way to use the R package in python:
+written for R. Fortunately there's a way to use the R package in python.
+
+One more thing: By default, the code only supports up to 32 different colors (i.e., the
+number of different colored balls in the urn). This can be easily fixed, though, by
+changing a constant in the code. Here's the full rundown to get it working:
 
 1. Install R
 2. Install a customized BiasedUrn package
